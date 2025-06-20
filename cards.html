@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковские карты - Индекс Драйв</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                    <span class="text-xl font-bold">Индекс Драйв</span>
+                </a>
+                <nav class="flex gap-8">
+                    <a href="index.html" class="text-white hover:text-blue-400 font-medium transition-colors">Главная</a>
+                    <a href="profile.html" class="text-white hover:text-blue-400 font-medium transition-colors">Личный кабинет</a>
+                    <a href="booking.html" class="text-white hover:text-blue-400 font-medium transition-colors">Бронирование</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen py-12">
+        <div class="max-w-4xl mx-auto px-5">
+            <div class="flex justify-between items-center mb-12">
+                <h1 class="text-4xl font-bold text-slate-800">Банковские карты</h1>
+                <button class="btn btn-primary" onclick="openAddCardModal()">Добавить карту</button>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center card p-8">
+                    <div class="w-52 h-32 rounded-xl flex flex-col justify-between p-4 text-white font-bold bg-gradient-to-br from-indigo-800 to-indigo-600">
+                        <div class="text-sm opacity-90">VISA</div>
+                        <div class="text-lg tracking-wider">**** **** **** 1234</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="space-y-2">
+                            <p><strong>Номер:</strong> **** **** **** 1234</p>
+                            <p><strong>Тип:</strong> Visa</p>
+                            <p><strong>Статус:</strong> <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">Активна</span></p>
+                        </div>
+                        <button class="btn btn-danger" onclick="removeCard('1234')">Удалить</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center card p-8">
+                    <div class="w-52 h-32 rounded-xl flex flex-col justify-between p-4 text-white font-bold bg-gradient-to-br from-red-700 to-red-500">
+                        <div class="text-sm opacity-90">MASTERCARD</div>
+                        <div class="text-lg tracking-wider">**** **** **** 5678</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="space-y-2">
+                            <p><strong>Номер:</strong> **** **** **** 5678</p>
+                            <p><strong>Тип:</strong> MasterCard</p>
+                            <p><strong>Статус:</strong> <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">Активна</span></p>
+                        </div>
+                        <button class="btn btn-danger" onclick="removeCard('5678')">Удалить</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center card p-8">
+                    <div class="w-52 h-32 rounded-xl flex flex-col justify-between p-4 text-white font-bold bg-gradient-to-br from-green-700 to-green-500">
+                        <div class="text-sm opacity-90">МИР</div>
+                        <div class="text-lg tracking-wider">**** **** **** 9012</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="space-y-2">
+                            <p><strong>Номер:</strong> **** **** **** 9012</p>
+                            <p><strong>Тип:</strong> Мир</p>
+                            <p><strong>Статус:</strong> <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-sm font-bold">Закончился срок</span></p>
+                        </div>
+                        <button class="btn btn-danger" onclick="removeCard('9012')">Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальное окно добавления карты -->
+    <div id="addCardModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg">
+                <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-slate-800">Добавить банковскую карту</h2>
+                    <span class="text-3xl font-bold cursor-pointer text-gray-400 hover:text-gray-600 transition-colors" onclick="closeAddCardModal()">&times;</span>
+                </div>
+                <form id="addCardForm" class="p-8">
+                    <div class="mb-6">
+                        <label for="cardNumber" class="block mb-2 font-medium text-gray-700">Номер карты</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required class="form-input">
+                    </div>
+                    <div class="mb-6">
+                        <label for="cardHolder" class="block mb-2 font-medium text-gray-700">Имя и фамилия держателя (латиницей)</label>
+                        <input type="text" id="cardHolder" name="cardHolder" placeholder="IVAN IVANOV" required class="form-input">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="expiryDate" class="block mb-2 font-medium text-gray-700">Дата окончания</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="cvv" class="block mb-2 font-medium text-gray-700">CVV/CVC</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required class="form-input">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Добавить карту</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                        <span class="text-xl font-bold">Индекс Драйв</span>
+                    </div>
+                    <p class="text-xl font-bold text-blue-400">8 (800) 555-35-35</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

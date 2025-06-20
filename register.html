@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - Индекс Драйв</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                    <span class="text-xl font-bold">Индекс Драйв</span>
+                </a>
+                <nav class="flex gap-8">
+                    <a href="index.html" class="text-white hover:text-blue-400 font-medium transition-colors">Главная</a>
+                    <a href="branches.html" class="text-white hover:text-blue-400 font-medium transition-colors">Филиалы</a>
+                    <a href="booking.html" class="text-white hover:text-blue-400 font-medium transition-colors">Бронирование</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-center items-center">
+                <div class="bg-white p-12 rounded-xl shadow-2xl w-full max-w-lg">
+                    <h1 class="text-3xl font-bold text-center mb-8 text-slate-800">Регистрация</h1>
+                    <form id="registerForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label for="lastName" class="block mb-2 font-medium text-gray-700">Фамилия</label>
+                                <input type="text" id="lastName" name="lastName" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="firstName" class="block mb-2 font-medium text-gray-700">Имя</label>
+                                <input type="text" id="firstName" name="firstName" required class="form-input">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="middleName" class="block mb-2 font-medium text-gray-700">Отчество</label>
+                            <input type="text" id="middleName" name="middleName" required class="form-input">
+                        </div>
+                        <div class="mb-6">
+                            <label for="passport" class="block mb-2 font-medium text-gray-700">Паспортные данные (серия и номер)</label>
+                            <input type="text" id="passport" name="passport" placeholder="0000 000000" required class="form-input">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block mb-2 font-medium text-gray-700">Номер телефона</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required class="form-input">
+                        </div>
+                        <div class="mb-6">
+                            <label for="birthDate" class="block mb-2 font-medium text-gray-700">Дата рождения</label>
+                            <input type="date" id="birthDate" name="birthDate" required class="form-input">
+                        </div>
+                        <div class="mb-6">
+                            <label for="password" class="block mb-2 font-medium text-gray-700">Пароль</label>
+                            <input type="password" id="password" name="password" required class="form-input">
+                        </div>
+                        <div class="mb-6">
+                            <label for="confirmPassword" class="block mb-2 font-medium text-gray-700">Повтор пароля</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required class="form-input">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Зарегистрироваться</button>
+                    </form>
+                    <div class="text-center mt-6">
+                        <p class="text-gray-600">Уже есть аккаунт? <a href="login.html" class="text-blue-500 hover:text-blue-700 font-medium">Войти</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                        <span class="text-xl font-bold">Индекс Драйв</span>
+                    </div>
+                    <p class="text-xl font-bold text-blue-400">8 (800) 555-35-35</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

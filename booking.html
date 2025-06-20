@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование - Индекс Драйв</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                    <span class="text-xl font-bold">Индекс Драйв</span>
+                </a>
+                <nav class="flex gap-8">
+                    <a href="index.html" class="text-white hover:text-blue-400 font-medium transition-colors">Главная</a>
+                    <a href="branches.html" class="text-white hover:text-blue-400 font-medium transition-colors">Филиалы</a>
+                    <a href="profile.html" class="text-white hover:text-blue-400 font-medium transition-colors">Личный кабинет</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen py-12">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="card p-8">
+                <h1 class="text-4xl font-bold mb-8 text-slate-800">Бронирование автомобиля</h1>
+                
+                <form id="bookingForm">
+                    <div class="space-y-12 mb-12">
+                        <section class="p-8 border border-gray-200 rounded-lg">
+                            <h2 class="text-2xl font-bold mb-6 text-slate-800 pb-2 border-b-2 border-blue-500">Данные об автомобиле</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="carId" class="block mb-2 font-medium text-gray-700">Идентификатор машины</label>
+                                    <input type="text" id="carId" name="carId" value="CAR123" readonly class="form-input bg-gray-100">
+                                </div>
+                                <div>
+                                    <label for="carBrand" class="block mb-2 font-medium text-gray-700">Марка авто</label>
+                                    <input type="text" id="carBrand" name="carBrand" value="Toyota" readonly class="form-input bg-gray-100">
+                                </div>
+                                <div>
+                                    <label for="carModel" class="block mb-2 font-medium text-gray-700">Название авто</label>
+                                    <input type="text" id="carModel" name="carModel" value="Camry" readonly class="form-input bg-gray-100">
+                                </div>
+                                <div>
+                                    <label for="carNumber" class="block mb-2 font-medium text-gray-700">Номер машины</label>
+                                    <input type="text" id="carNumber" name="carNumber" value="А123БВ77" readonly class="form-input bg-gray-100">
+                                </div>
+                                <div>
+                                    <label for="startDate" class="block mb-2 font-medium text-gray-700">Дата бронирования</label>
+                                    <input type="date" id="startDate" name="startDate" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="endDate" class="block mb-2 font-medium text-gray-700">Дата возврата</label>
+                                    <input type="date" id="endDate" name="endDate" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="dailyPrice" class="block mb-2 font-medium text-gray-700">Стоимость за день</label>
+                                    <input type="text" id="dailyPrice" name="dailyPrice" value="2500 ₽" readonly class="form-input bg-gray-100">
+                                </div>
+                                <div>
+                                    <label for="branch" class="block mb-2 font-medium text-gray-700">Филиал</label>
+                                    <select id="branch" name="branch" required class="form-input">
+                                        <option value="">Выберите филиал</option>
+                                        <option value="central">Центральный</option>
+                                        <option value="north">Северный</option>
+                                        <option value="south">Южный</option>
+                                        <option value="east">Восточный</option>
+                                        <option value="west">Западный</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="p-8 border border-gray-200 rounded-lg">
+                            <h2 class="text-2xl font-bold mb-6 text-slate-800 pb-2 border-b-2 border-blue-500">Данные о клиенте</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="lastName" class="block mb-2 font-medium text-gray-700">Фамилия</label>
+                                    <input type="text" id="lastName" name="lastName" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="firstName" class="block mb-2 font-medium text-gray-700">Имя</label>
+                                    <input type="text" id="firstName" name="firstName" required class="form-input">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="middleName" class="block mb-2 font-medium text-gray-700">Отчество</label>
+                                    <input type="text" id="middleName" name="middleName" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block mb-2 font-medium text-gray-700">Номер телефона</label>
+                                    <input type="tel" id="phone" name="phone" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="passport" class="block mb-2 font-medium text-gray-700">Паспортные данные</label>
+                                    <input type="text" id="passport" name="passport" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="bankCard" class="block mb-2 font-medium text-gray-700">Банковская карта</label>
+                                    <select id="bankCard" name="bankCard" required class="form-input">
+                                        <option value="">Выберите карту</option>
+                                        <option value="1234">**** **** **** 1234</option>
+                                        <option value="5678">**** **** **** 5678</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="birthDate" class="block mb-2 font-medium text-gray-700">Дата рождения</label>
+                                    <input type="date" id="birthDate" name="birthDate" required class="form-input">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold mb-4 text-slate-800">Расчет стоимости</h3>
+                            <div class="bg-white p-6 rounded-lg mb-4">
+                                <div class="flex justify-between mb-2">
+                                    <span>Количество дней:</span>
+                                    <span id="daysCount">0</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Стоимость за день:</span>
+                                    <span>2500 ₽</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Скидка:</span>
+                                    <span id="discount">0%</span>
+                                </div>
+                                <div class="flex justify-between font-bold text-lg text-blue-500 border-t pt-4 mt-4">
+                                    <span>Итого:</span>
+                                    <span id="totalPrice">0 ₽</span>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <p>При аренде от 3 дней - скидка 5%</p>
+                                <p>За каждые 3 дня +5% (максимум 25%)</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <button type="button" class="btn btn-secondary" onclick="selectCar()">Выбрать другую машину</button>
+                            <button type="button" class="btn btn-secondary" onclick="selectCard()">Выбрать карту</button>
+                            <button type="button" class="btn btn-secondary" onclick="changeTariff()">Изменить тариф</button>
+                            <button type="submit" class="btn btn-primary">Оформить бронирование</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                        <span class="text-xl font-bold">Индекс Драйв</span>
+                    </div>
+                    <p class="text-xl font-bold text-blue-400">8 (800) 555-35-35</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

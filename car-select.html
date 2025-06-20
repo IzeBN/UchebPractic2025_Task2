@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор автомобиля - Индекс Драйв</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                    <span class="text-xl font-bold">Индекс Драйв</span>
+                </a>
+                <nav class="flex gap-8">
+                    <a href="index.html" class="text-white hover:text-blue-400 font-medium transition-colors">Главная</a>
+                    <a href="branches.html" class="text-white hover:text-blue-400 font-medium transition-colors">Филиалы</a>
+                    <a href="profile.html" class="text-white hover:text-blue-400 font-medium transition-colors">Личный кабинет</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <h1 class="text-4xl font-bold mb-12 text-slate-800">Выбор автомобиля</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 p-8 bg-white rounded-xl shadow-lg">
+                <div>
+                    <label for="brandFilter" class="block mb-2 font-medium text-gray-700">Марка:</label>
+                    <select id="brandFilter" onchange="filterCars()" class="form-input">
+                        <option value="">Все марки</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="engineFilter" class="block mb-2 font-medium text-gray-700">Тип двигателя:</label>
+                    <select id="engineFilter" onchange="filterCars()" class="form-input">
+                        <option value="">Любой</option>
+                        <option value="petrol">Бензиновый</option>
+                        <option value="diesel">Дизельный</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="transmissionFilter" class="block mb-2 font-medium text-gray-700">Коробка передач:</label>
+                    <select id="transmissionFilter" onchange="filterCars()" class="form-input">
+                        <option value="">Любая</option>
+                        <option value="manual">МКП</option>
+                        <option value="automatic">АКП</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="carsGrid">
+                <div class="card overflow-hidden" data-brand="toyota" data-engine="petrol" data-transmission="automatic">
+                    <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Toyota Camry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-slate-800">Toyota Camry</h3>
+                        <div class="space-y-2 mb-6">
+                            <p><strong>Марка:</strong> Toyota</p>
+                            <p><strong>Модель:</strong> Camry</p>
+                            <p><strong>Цвет:</strong> Белый</p>
+                            <p><strong>Двигатель:</strong> Бензиновый</p>
+                            <p><strong>КПП:</strong> АКП</p>
+                            <p class="text-xl font-bold text-green-600">2500 ₽/день</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary flex-1" onclick="selectCar('toyota-camry')">Выбрать</button>
+                            <button class="btn btn-secondary flex-1" onclick="cancelSelection()">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card overflow-hidden" data-brand="bmw" data-engine="petrol" data-transmission="automatic">
+                    <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=400" alt="BMW X5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-slate-800">BMW X5</h3>
+                        <div class="space-y-2 mb-6">
+                            <p><strong>Марка:</strong> BMW</p>
+                            <p><strong>Модель:</strong> X5</p>
+                            <p><strong>Цвет:</strong> Черный</p>
+                            <p><strong>Двигатель:</strong> Бензиновый</p>
+                            <p><strong>КПП:</strong> АКП</p>
+                            <p class="text-xl font-bold text-green-600">4500 ₽/день</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary flex-1" onclick="selectCar('bmw-x5')">Выбрать</button>
+                            <button class="btn btn-secondary flex-1" onclick="cancelSelection()">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card overflow-hidden" data-brand="mercedes" data-engine="diesel" data-transmission="automatic">
+                    <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mercedes C-Class" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-slate-800">Mercedes C-Class</h3>
+                        <div class="space-y-2 mb-6">
+                            <p><strong>Марка:</strong> Mercedes</p>
+                            <p><strong>Модель:</strong> C-Class</p>
+                            <p><strong>Цвет:</strong> Серебристый</p>
+                            <p><strong>Двигатель:</strong> Дизельный</p>
+                            <p><strong>КПП:</strong> АКП</p>
+                            <p class="text-xl font-bold text-green-600">3200 ₽/день</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary flex-1" onclick="selectCar('mercedes-c-class')">Выбрать</button>
+                            <button class="btn btn-secondary flex-1" onclick="cancelSelection()">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card overflow-hidden" data-brand="audi" data-engine="petrol" data-transmission="manual">
+                    <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Audi A4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-slate-800">Audi A4</h3>
+                        <div class="space-y-2 mb-6">
+                            <p><strong>Марка:</strong> Audi</p>
+                            <p><strong>Модель:</strong> A4</p>
+                            <p><strong>Цвет:</strong> Синий</p>
+                            <p><strong>Двигатель:</strong> Бензиновый</p>
+                            <p><strong>КПП:</strong> МКП</p>
+                            <p class="text-xl font-bold text-green-600">3500 ₽/день</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary flex-1" onclick="selectCar('audi-a4')">Выбрать</button>
+                            <button class="btn btn-secondary flex-1" onclick="cancelSelection()">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card overflow-hidden" data-brand="toyota" data-engine="petrol" data-transmission="manual">
+                    <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Toyota Corolla" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-slate-800">Toyota Corolla</h3>
+                        <div class="space-y-2 mb-6">
+                            <p><strong>Марка:</strong> Toyota</p>
+                            <p><strong>Модель:</strong> Corolla</p>
+                            <p><strong>Цвет:</strong> Красный</p>
+                            <p><strong>Двигатель:</strong> Бензиновый</p>
+                            <p><strong>КПП:</strong> МКП</p>
+                            <p class="text-xl font-bold text-green-600">2000 ₽/день</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary flex-1" onclick="selectCar('toyota-corolla')">Выбрать</button>
+                            <button class="btn btn-secondary flex-1" onclick="cancelSelection()">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card overflow-hidden" data-brand="bmw" data-engine="diesel" data-transmission="automatic">
+                    <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=400" alt="BMW 3 Series" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-slate-800">BMW 3 Series</h3>
+                        <div class="space-y-2 mb-6">
+                            <p><strong>Марка:</strong> BMW</p>
+                            <p><strong>Модель:</strong> 3 Series</p>
+                            <p><strong>Цвет:</strong> Белый</p>
+                            <p><strong>Двигатель:</strong> Дизельный</p>
+                            <p><strong>КПП:</strong> АКП</p>
+                            <p class="text-xl font-bold text-green-600">3800 ₽/день</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="btn btn-primary flex-1" onclick="selectCar('bmw-3-series')">Выбрать</button>
+                            <button class="btn btn-secondary flex-1" onclick="cancelSelection()">Отмена</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                        <span class="text-xl font-bold">Индекс Драйв</span>
+                    </div>
+                    <p class="text-xl font-bold text-blue-400">8 (800) 555-35-35</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

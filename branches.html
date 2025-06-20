@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Филиалы - Индекс Драйв</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                    <span class="text-xl font-bold">Индекс Драйв</span>
+                </a>
+                <nav class="flex gap-8">
+                    <a href="index.html" class="text-white hover:text-blue-400 font-medium transition-colors">Главная</a>
+                    <a href="booking.html" class="text-white hover:text-blue-400 font-medium transition-colors">Бронирование</a>
+                    <a href="profile.html" class="text-white hover:text-blue-400 font-medium transition-colors">Личный кабинет</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen py-12">
+        <div class="max-w-5xl mx-auto px-5">
+            <h1 class="text-4xl font-bold mb-12 text-slate-800">Наши филиалы</h1>
+            
+            <div class="mb-12">
+                <div class="relative h-96 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl overflow-hidden border-2 border-blue-300">
+                    <div class="absolute cursor-pointer transition-transform hover:scale-110" data-branch="central" style="top: 40%; left: 50%; transform: translate(-50%, -50%);">
+                        <div class="text-3xl mb-2">📍</div>
+                        <div class="bg-white px-3 py-1 rounded text-xs font-bold text-center shadow-lg">Центральный</div>
+                    </div>
+                    <div class="absolute cursor-pointer transition-transform hover:scale-110" data-branch="north" style="top: 20%; left: 45%; transform: translate(-50%, -50%);">
+                        <div class="text-3xl mb-2">📍</div>
+                        <div class="bg-white px-3 py-1 rounded text-xs font-bold text-center shadow-lg">Северный</div>
+                    </div>
+                    <div class="absolute cursor-pointer transition-transform hover:scale-110" data-branch="south" style="top: 70%; left: 55%; transform: translate(-50%, -50%);">
+                        <div class="text-3xl mb-2">📍</div>
+                        <div class="bg-white px-3 py-1 rounded text-xs font-bold text-center shadow-lg">Южный</div>
+                    </div>
+                    <div class="absolute cursor-pointer transition-transform hover:scale-110" data-branch="east" style="top: 45%; left: 75%; transform: translate(-50%, -50%);">
+                        <div class="text-3xl mb-2">📍</div>
+                        <div class="bg-white px-3 py-1 rounded text-xs font-bold text-center shadow-lg">Восточный</div>
+                    </div>
+                    <div class="absolute cursor-pointer transition-transform hover:scale-110" data-branch="west" style="top: 35%; left: 25%; transform: translate(-50%, -50%);">
+                        <div class="text-3xl mb-2">📍</div>
+                        <div class="bg-white px-3 py-1 rounded text-xs font-bold text-center shadow-lg">Западный</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-8">
+                <div id="branch-central">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Центральный филиал</h3>
+                    <p class="text-gray-600 mb-6">ул. Центральная, 1</p>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-slate-800">Доступные автомобили:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Toyota Camry" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Toyota Camry</h5>
+                                    <p class="text-green-600 font-bold text-sm">2500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=200" alt="BMW X5" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">BMW X5</h5>
+                                    <p class="text-green-600 font-bold text-sm">4500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Mercedes C-Class" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Mercedes C-Class</h5>
+                                    <p class="text-green-600 font-bold text-sm">3200 ₽/день</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="branch-north" class="hidden">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Северный филиал</h3>
+                    <p class="text-gray-600 mb-6">ул. Северная, 15</p>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-slate-800">Доступные автомобили:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Audi A4" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Audi A4</h5>
+                                    <p class="text-green-600 font-bold text-sm">3500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=200" alt="BMW X5" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">BMW X5</h5>
+                                    <p class="text-green-600 font-bold text-sm">4500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Toyota Camry" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Toyota Camry</h5>
+                                    <p class="text-green-600 font-bold text-sm">2500 ₽/день</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="branch-south" class="hidden">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Южный филиал</h3>
+                    <p class="text-gray-600 mb-6">ул. Южная, 25</p>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-slate-800">Доступные автомобили:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Mercedes C-Class" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Mercedes C-Class</h5>
+                                    <p class="text-green-600 font-bold text-sm">3200 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Audi A4" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Audi A4</h5>
+                                    <p class="text-green-600 font-bold text-sm">3500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Toyota Camry" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Toyota Camry</h5>
+                                    <p class="text-green-600 font-bold text-sm">2500 ₽/день</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="branch-east" class="hidden">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Восточный филиал</h3>
+                    <p class="text-gray-600 mb-6">ул. Восточная, 8</p>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-slate-800">Доступные автомобили:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=200" alt="BMW X5" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">BMW X5</h5>
+                                    <p class="text-green-600 font-bold text-sm">4500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Audi A4" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Audi A4</h5>
+                                    <p class="text-green-600 font-bold text-sm">3500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Mercedes C-Class" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Mercedes C-Class</h5>
+                                    <p class="text-green-600 font-bold text-sm">3200 ₽/день</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="branch-west" class="hidden">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Западный филиал</h3>
+                    <p class="text-gray-600 mb-6">ул. Западная, 12</p>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-slate-800">Доступные автомобили:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Toyota Camry" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Toyota Camry</h5>
+                                    <p class="text-green-600 font-bold text-sm">2500 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Mercedes C-Class" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Mercedes C-Class</h5>
+                                    <p class="text-green-600 font-bold text-sm">3200 ₽/день</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:-translate-y-1 hover:shadow-md transition-all">
+                                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Audi A4" class="w-16 h-10 object-cover rounded">
+                                <div>
+                                    <h5 class="font-semibold text-slate-800 mb-1">Audi A4</h5>
+                                    <p class="text-green-600 font-bold text-sm">3500 ₽/день</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <img src="logo.png" alt="Индекс Драйв" class="w-10 h-10 mr-3 bg-blue-500 rounded-lg">
+                        <span class="text-xl font-bold">Индекс Драйв</span>
+                    </div>
+                    <p class="text-xl font-bold text-blue-400">8 (800) 555-35-35</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
